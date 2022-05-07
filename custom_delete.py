@@ -13,7 +13,7 @@ for i in list_dir:
         cnt += 1
 print(f"deleted {cnt} images due to format")
 
-
+'''
 cnt = 0
 list_dir = os.listdir(os.getcwd())
 for i in list_dir:
@@ -22,9 +22,21 @@ for i in list_dir:
         os.remove(i)
         image_np = np.empty([2,2,3])
     image_np = image_np.shape
-    '''
+
     if image_np[0]*image_np[1] > 2000000:
         os.remove(i)
         cnt += 1
-    '''
-print(f"deleted {cnt} images due to size")
+
+print(f"deleted {cnt} images due to size ")
+'''
+
+cnt = 0
+list_dir = os.listdir(os.getcwd())
+for i in list_dir:
+    size = os.path.getsize(i)
+    if size < 1:
+        os.remove(i)
+        cnt += 1
+
+
+print(f"deleted {cnt} images due to none ")
